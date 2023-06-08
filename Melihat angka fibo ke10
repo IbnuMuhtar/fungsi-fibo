@@ -1,0 +1,23 @@
+#include <iostream>
+#include <vector>
+
+int fibonacci(int n) {
+    std::vector<int> fib(n + 1);  // Membuat vektor untuk menyimpan angka-angka dalam deret Fibonacci
+
+    fib[0] = 0;  // Inisialisasi dua angka pertama dalam deret Fibonacci
+    fib[1] = 1;
+
+    for (int i = 2; i <= n; i++) {
+        fib[i] = fib[i - 1] + fib[i - 2];  // Menambahkan angka Fibonacci baru ke dalam vektor
+    }
+
+    return fib[n];  // Kembalikan angka Fibonacci ke-n
+}
+
+int main() {
+    int n = 10;
+    int result = fibonacci(n);
+    std::cout << "Fibonacci ke-" << n << ": " << result << std::endl;
+
+    return 0;
+}
